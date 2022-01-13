@@ -3,13 +3,14 @@ import { Grid } from "@material-ui/core";
 
 import VideoItem from './VideoItem';
 
-const VideoList = () => {
+const VideoList = ({videos, onVideoSelect}) => {
     return (
         <Grid container spacing={10}>
-            <VideoItem />
-            <VideoItem />
-            <VideoItem />
-            <VideoItem />
+            {videos.map((video, id) => {
+                return (
+                    <VideoItem key={id} video={video} onVideoSelect={onVideoSelect}/>
+                )
+            })}
         </Grid>
     )
 }

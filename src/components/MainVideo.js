@@ -13,9 +13,9 @@ const MainVideo = ({video}) => {
                 <iframe height='100%/' width='100%' title="Main video player" src={videoSrc} />
             </Paper>
             <Paper elevation={6} style={{padding: '15px'}}>
-                <Typography variant='h4'>VIDEO TITLE</Typography>
-                <Typography variant='subtitle1'>SAMPLE CHANNEL TITLE</Typography>
-                <Typography variant='subtitle2'>DESCRIPTION GOES HERE</Typography>
+                <Typography variant='h4'>{video.snippet.title}</Typography>
+                <Typography variant='subtitle1'>{video.snippet.channelTitle}</Typography>
+                <Typography variant='subtitle2'>{video.snippet.description}</Typography>
             </Paper>
         </React.Fragment>
     )

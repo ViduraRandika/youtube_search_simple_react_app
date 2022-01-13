@@ -13,6 +13,10 @@ class App extends React.Component{
     componentDidMount(){
         this.handleSubmit('javascript')
     }
+
+    onVideoSelect = (video) => {
+        this.setState({selectedVideo: video})
+    }
     
     handleSubmit = async(searchTerm) => {
         const response = await youtube.get('search', {params : {q : searchTerm}});
@@ -31,7 +35,9 @@ class App extends React.Component{
                         <Grid item xs={8}>
                             <MainVideo video={selectedVideo}/>
                         </Grid>
-                        <Grid item xs={4}><VideoList /></Grid>
+                        <Grid item xs={4}>
+                            <VideoList videos={videos} onVideoSelect={this.onVideoSelect}/>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
