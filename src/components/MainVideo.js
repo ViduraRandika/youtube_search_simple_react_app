@@ -2,9 +2,10 @@ import React, { Fragment } from 'react';
 
 import {Paper, Typography} from '@material-ui/core';
 
-const MainVideo = () => {
-    // Tempory url
-    const videoSrc = 'https://www.youtube.com/watch?v=PkZNo7MFNFg'; 
+const MainVideo = ({video}) => {
+    if(!video) return <div>Loading ...</div>
+
+    const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`; 
 
     return(
         <React.Fragment>
